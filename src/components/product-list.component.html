@@ -1,0 +1,20 @@
+<div>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar producto..." (input)="searchProducts()"/>
+  
+    <select (change)="onRecordsToShowChange($event.target.value)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  
+    <p>Mostrando {{totalRecords}} productos</p>
+  
+    <ul>
+      <li *ngFor="let product of displayedProducts">
+        {{ product.name }} - {{ product.description }}
+      </li>
+    </ul>
+  
+    <button routerLink="/add-product">Agregar producto</button>
+  </div>
+  
